@@ -11,28 +11,35 @@ class recommendSecondCell: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         iv.contentMode = .scaleAspectFill
-        iv.layer.cornerRadius = 5
+        iv.layer.cornerRadius = 15
         iv.clipsToBounds = true
+        iv.image = UIImage(named: "HomeCV1Cell4")
         return iv
     }()
     
     let label: UILabel = {
         let lb = UILabel()
         lb.text = "스포츠"
+        lb.font = UIFont.systemFont(ofSize: 14)
+        lb.textAlignment = .center
         return lb
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let stack = UIStackView(arrangedSubviews: [imageView, label])
-        stack.distribution = .fillEqually
-        addSubview(stack)
-        stack.snp.makeConstraints { make in
-            make.top.left.bottom.right.equalToSuperview()
-            //make.height.equalTo(50)
+        contentView.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.height.width.equalTo(55)
+        }
+
+        contentView.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(7)
+            make.width.equalTo(imageView.snp.width)
         }
     }
     

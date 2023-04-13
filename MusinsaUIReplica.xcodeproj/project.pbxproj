@@ -30,6 +30,7 @@
 		8F5CF13529E6644A00D0DF12 /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5CF13429E6644A00D0DF12 /* TopCell.swift */; };
 		8F5CF13B29E6A2AA00D0DF12 /* recommendFirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5CF13A29E6A2AA00D0DF12 /* recommendFirstCell.swift */; };
 		8F5CF13D29E6AAC700D0DF12 /* TopHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5CF13C29E6AAC700D0DF12 /* TopHeader.swift */; };
+		8FD3D7F729E7941A00D6ADB2 /* recommendCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3D7F629E7941A00D6ADB2 /* recommendCell3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		8F5CF13429E6644A00D0DF12 /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		8F5CF13A29E6A2AA00D0DF12 /* recommendFirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendFirstCell.swift; sourceTree = "<group>"; };
 		8F5CF13C29E6AAC700D0DF12 /* TopHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeader.swift; sourceTree = "<group>"; };
+		8FD3D7F629E7941A00D6ADB2 /* recommendCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendCell3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		8F5CF13329E6642E00D0DF12 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				8FD3D7F629E7941A00D6ADB2 /* recommendCell3.swift */,
 				8F199A9A29E551CA00054D2B /* recommendSecondCell.swift */,
 				8F5CF13A29E6A2AA00D0DF12 /* recommendFirstCell.swift */,
 				8F199A9329E54D7300054D2B /* HomeHeader.swift */,
@@ -240,6 +243,7 @@
 				8F5CF13029E6561F00D0DF12 /* extension.swift in Sources */,
 				8F199A9429E54D7300054D2B /* HomeHeader.swift in Sources */,
 				8F5CF13529E6644A00D0DF12 /* TopCell.swift in Sources */,
+				8FD3D7F729E7941A00D6ADB2 /* recommendCell3.swift in Sources */,
 				8F199A6A29E52AF300054D2B /* rankingViewController.swift in Sources */,
 				8F5CF13B29E6A2AA00D0DF12 /* recommendFirstCell.swift in Sources */,
 				8F199A6429E51A8100054D2B /* MyViewController.swift in Sources */,

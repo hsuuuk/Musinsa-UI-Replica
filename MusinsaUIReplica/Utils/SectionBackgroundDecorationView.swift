@@ -18,7 +18,7 @@ class SectionBackgroundDecorationView: UICollectionReusableView {
     }
     
     func configure() {
-        backgroundColor = .yellow
+        //backgroundColor = .yellow
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1
     }

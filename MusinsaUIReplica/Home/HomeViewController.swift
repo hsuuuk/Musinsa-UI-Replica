@@ -55,11 +55,10 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UITableViewCell")
-        collectionView.register(recommendFirstCell.self, forCellWithReuseIdentifier: "firstCell")
-        collectionView.register(recommendSecondCell.self, forCellWithReuseIdentifier: "secondCell")
+        collectionView.register(recommendFirstCell.self, forCellWithReuseIdentifier: "recommendFirstCell")
+        collectionView.register(recommendSecondCell.self, forCellWithReuseIdentifier: "recommendSecondCell")
+        collectionView.register(recommendCell3.self, forCellWithReuseIdentifier: "recommendCell3")
 //        collectionView.register(HomeHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HomeHeader")
-        
-        collectionView.backgroundColor = .lightGray
         
         let barketBarButton = UIBarButtonItem(image: UIImage(systemName: "bag"), style: .plain, target: self, action: #selector(BarButtonTapped))
         barketBarButton.tintColor = .black
@@ -78,7 +77,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return collectionView == topCollectionView ? 1 : 5
+        return collectionView == topCollectionView ? 1 : 10
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -88,6 +87,9 @@ extension HomeViewController: UICollectionViewDataSource {
             switch section {
             case 0: return 5
             case 1: return 5
+            case 2: return 5
+            case 3: return 3
+            case 4: return 3
             default: return 10
             }
         }
@@ -121,7 +123,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         } else {
             if indexPath.section == 0 {
-                let FistCell = collectionView.dequeueReusableCell(withReuseIdentifier: "firstCell", for: indexPath) as! recommendFirstCell
+                let FistCell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendFirstCell", for: indexPath) as! recommendFirstCell
                 switch indexPath.row {
                 case 0: FistCell.imageView.image = UIImage(named: "HomeCV1Cell1")
                 case 1: FistCell.imageView.image = UIImage(named: "HomeCV1Cell2")
@@ -132,8 +134,17 @@ extension HomeViewController: UICollectionViewDataSource {
                 }
                 return FistCell
             } else if indexPath.section == 1 {
-                let SecondCell = collectionView.dequeueReusableCell(withReuseIdentifier: "secondCell", for: indexPath) as! recommendSecondCell
+                let SecondCell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendSecondCell", for: indexPath) as! recommendSecondCell
                 return SecondCell
+            } else if indexPath.section == 2 {
+                let SecondCell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendSecondCell", for: indexPath) as! recommendSecondCell
+                return SecondCell
+            } else if indexPath.section == 3 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
+                return cell
+            } else if indexPath.section == 4 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
+                return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UITableViewCell", for: indexPath)
                 cell.backgroundColor = .orange
