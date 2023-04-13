@@ -58,7 +58,8 @@ class HomeViewController: UIViewController {
         collectionView.register(recommendFirstCell.self, forCellWithReuseIdentifier: "recommendFirstCell")
         collectionView.register(recommendSecondCell.self, forCellWithReuseIdentifier: "recommendSecondCell")
         collectionView.register(recommendCell3.self, forCellWithReuseIdentifier: "recommendCell3")
-//        collectionView.register(HomeHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HomeHeader")
+        collectionView.register(recommendCell3Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "recommendCell3Header")
+        collectionView.register(recommendCell3Footer.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "recommendCell3Footer")
         
         let barketBarButton = UIBarButtonItem(image: UIImage(systemName: "bag"), style: .plain, target: self, action: #selector(BarButtonTapped))
         barketBarButton.tintColor = .black
@@ -150,22 +151,20 @@ extension HomeViewController: UICollectionViewDataSource {
                 cell.backgroundColor = .orange
                 return cell
             }
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UITableViewCell", for: indexPath)
-//            cell.backgroundColor = .orange
-//            return cell
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        if collectionView == topCollectionView {
-//            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TopHeader", for: indexPath) as! TopHeader
-//            return header
-//        } else {
-//            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeHeader", for: indexPath) as! HomeHeader
-//            header.backgroundColor = .blue
-//            return header
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if collectionView == collectionView, kind == UICollectionView.elementKindSectionHeader, indexPath.section == 3 {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "recommendCell3Header", for: indexPath) as! recommendCell3Header
+            return header
+        } else if collectionView == collectionView, kind == UICollectionView.elementKindSectionFooter, indexPath.section == 4 {
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "recommendCell3Footer", for: indexPath) as! recommendCell3Footer
+            return footer
+        } else {
+            return UICollectionReusableView()
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

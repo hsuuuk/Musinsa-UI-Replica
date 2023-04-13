@@ -68,14 +68,14 @@ struct Layout {
                 section.orthogonalScrollingBehavior = .groupPaging
                 section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
                 
-//                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
-//                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
-//
-//                section.boundarySupplementaryItems = [header]
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+
+                section.boundarySupplementaryItems = [header]
                 
-//                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
-//                    elementKind: "background")
-//                section.decorationItems = [sectionBackgroundDecoration]
+                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
+                    elementKind: "background")
+                section.decorationItems = [sectionBackgroundDecoration]
                 
                 return section
                 
@@ -92,9 +92,14 @@ struct Layout {
                 section.orthogonalScrollingBehavior = .groupPaging
                 section.contentInsets = .init(top: 15, leading: 10, bottom: 0, trailing: 10)
                 
-//                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
-//                    elementKind: "background")
-//                section.decorationItems = [sectionBackgroundDecoration]
+                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
+                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
+
+                section.boundarySupplementaryItems = [footer]
+                
+                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
+                    elementKind: "background")
+                section.decorationItems = [sectionBackgroundDecoration]
                 
                 return section
                 
