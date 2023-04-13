@@ -10,16 +10,15 @@ import SnapKit
 
 class recommendCell3Header: UICollectionReusableView {
     
-    let lable: UILabel = {
+    lazy var lable: UILabel = {
         let lb = UILabel()
-        lb.text = "스포츠"
-        lb.font = UIFont.systemFont(ofSize: 20)
+        lb.attributedText = attributedStateText(firstText: "hsuuuk님", secondText: "의 취향저격 상품")
         return lb
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .gray
+
         addSubview(lable)
         lable.snp.makeConstraints { make in
             make.top.left.right.bottom.equalToSuperview()
@@ -29,5 +28,13 @@ class recommendCell3Header: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func attributedStateText(firstText: String, secondText: String) -> NSAttributedString {
+        let attributedText = NSMutableAttributedString(string: firstText, attributes: [.font: UIFont.boldSystemFont(ofSize: 18), .foregroundColor: UIColor.black])
+        attributedText.append(NSAttributedString(string: secondText, attributes: [.font: UIFont.boldSystemFont(ofSize: 18), .foregroundColor: UIColor.lightGray]))
+        return attributedText
+    }
 }
+
+
 

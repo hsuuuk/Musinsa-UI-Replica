@@ -33,6 +33,9 @@
 		8FD3D7F729E7941A00D6ADB2 /* recommendCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3D7F629E7941A00D6ADB2 /* recommendCell3.swift */; };
 		8FD3D7F929E7AA5D00D6ADB2 /* recommendCell3Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3D7F829E7AA5D00D6ADB2 /* recommendCell3Header.swift */; };
 		8FD3D7FB29E7AA6600D6ADB2 /* recommendCell3Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3D7FA29E7AA6600D6ADB2 /* recommendCell3Footer.swift */; };
+		8FD3D7FD29E7B9FE00D6ADB2 /* recommendCell4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3D7FC29E7B9FE00D6ADB2 /* recommendCell4.swift */; };
+		8FD3D7FF29E7BA0C00D6ADB2 /* recommendCell4Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3D7FE29E7BA0C00D6ADB2 /* recommendCell4Header.swift */; };
+		8FD3D80129E7CCDE00D6ADB2 /* recommendCell4Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3D80029E7CCDE00D6ADB2 /* recommendCell4Footer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		8FD3D7F629E7941A00D6ADB2 /* recommendCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendCell3.swift; sourceTree = "<group>"; };
 		8FD3D7F829E7AA5D00D6ADB2 /* recommendCell3Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendCell3Header.swift; sourceTree = "<group>"; };
 		8FD3D7FA29E7AA6600D6ADB2 /* recommendCell3Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendCell3Footer.swift; sourceTree = "<group>"; };
+		8FD3D7FC29E7B9FE00D6ADB2 /* recommendCell4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendCell4.swift; sourceTree = "<group>"; };
+		8FD3D7FE29E7BA0C00D6ADB2 /* recommendCell4Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendCell4Header.swift; sourceTree = "<group>"; };
+		8FD3D80029E7CCDE00D6ADB2 /* recommendCell4Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendCell4Footer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,9 @@
 		8F5CF13329E6642E00D0DF12 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				8FD3D7FC29E7B9FE00D6ADB2 /* recommendCell4.swift */,
+				8FD3D7FE29E7BA0C00D6ADB2 /* recommendCell4Header.swift */,
+				8FD3D80029E7CCDE00D6ADB2 /* recommendCell4Footer.swift */,
 				8FD3D7F629E7941A00D6ADB2 /* recommendCell3.swift */,
 				8FD3D7F829E7AA5D00D6ADB2 /* recommendCell3Header.swift */,
 				8FD3D7FA29E7AA6600D6ADB2 /* recommendCell3Footer.swift */,
@@ -246,6 +255,7 @@
 				8F5CF13D29E6AAC700D0DF12 /* TopHeader.swift in Sources */,
 				8F199A9B29E551CA00054D2B /* recommendSecondCell.swift in Sources */,
 				8F199A5E29E5199E00054D2B /* CategoryViewController.swift in Sources */,
+				8FD3D80129E7CCDE00D6ADB2 /* recommendCell4Footer.swift in Sources */,
 				8F199A4E29E5126B00054D2B /* HomeViewController.swift in Sources */,
 				8F5CF13029E6561F00D0DF12 /* extension.swift in Sources */,
 				8F199A9429E54D7300054D2B /* HomeHeader.swift in Sources */,
@@ -257,6 +267,8 @@
 				8F199A4A29E5126B00054D2B /* AppDelegate.swift in Sources */,
 				8FD3D7FB29E7AA6600D6ADB2 /* recommendCell3Footer.swift in Sources */,
 				8F199A4C29E5126B00054D2B /* SceneDelegate.swift in Sources */,
+				8FD3D7FF29E7BA0C00D6ADB2 /* recommendCell4Header.swift in Sources */,
+				8FD3D7FD29E7B9FE00D6ADB2 /* recommendCell4.swift in Sources */,
 				8F199A6C29E52AFD00054D2B /* styleViewController.swift in Sources */,
 				8F199A6229E519D100054D2B /* LikeViewController.swift in Sources */,
 			);

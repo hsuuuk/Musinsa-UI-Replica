@@ -1,5 +1,5 @@
 //
-//  recommendCell3Footer.swift
+//  recommendCell4Footer.swift
 //  MusinsaUIReplica
 //
 //  Created by 심현석 on 2023/04/13.
@@ -8,13 +8,11 @@
 import UIKit
 import SnapKit
 
-class recommendCell3Footer: UICollectionReusableView {
+class recommendCell4Footer: UICollectionReusableView {
     
-    let Button: UIButton = {
+    lazy var Button: UIButton = {
         let bt = UIButton(type: .system)
-        bt.setTitle("내가 좋아할 만한 상품   ❯", for: .normal)
-        bt.setTitleColor(.black, for: .normal)
-        bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        bt.setAttributedTitle(attributedText(firstText: "돈애스크마이플랜", secondText: " 브랜드 숍 바로가기   ❯"), for: .normal)
         bt.layer.cornerRadius = 50 / 2
         bt.layer.borderColor = UIColor.lightGray.cgColor
         bt.layer.borderWidth = 0.5
@@ -35,5 +33,11 @@ class recommendCell3Footer: UICollectionReusableView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func attributedText(firstText: String, secondText: String) -> NSAttributedString {
+        let attributedText = NSMutableAttributedString(string: firstText, attributes: [.font: UIFont.boldSystemFont(ofSize: 13), .foregroundColor: UIColor.black])
+        attributedText.append(NSAttributedString(string: secondText, attributes: [.font: UIFont.boldSystemFont(ofSize: 13), .foregroundColor: UIColor.lightGray]))
+        return attributedText
     }
 }

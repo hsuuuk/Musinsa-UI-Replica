@@ -51,7 +51,7 @@ struct Layout {
                                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .groupPaging
-                section.contentInsets = .init(top: 25, leading: 18, bottom: 0, trailing: 0)
+                section.contentInsets = .init(top: 25, leading: 18, bottom: 30, trailing: 0)
 
                 return section
                 
@@ -62,20 +62,15 @@ struct Layout {
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.31), heightDimension: .absolute(200))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-                group.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 0)
+                group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 5)
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .groupPaging
-                section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
+                section.contentInsets = .init(top: 0, leading: 10+5, bottom: 0, trailing: 10)
                 
-                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
-                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
-
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topTrailing)
                 section.boundarySupplementaryItems = [header]
-                
-                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
-                    elementKind: "background")
-                section.decorationItems = [sectionBackgroundDecoration]
                 
                 return section
                 
@@ -92,14 +87,62 @@ struct Layout {
                 section.orthogonalScrollingBehavior = .groupPaging
                 section.contentInsets = .init(top: 15, leading: 10, bottom: 0, trailing: 10)
                 
-                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
+                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(65))
                 let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
-
                 section.boundarySupplementaryItems = [footer]
                 
-                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
-                    elementKind: "background")
-                section.decorationItems = [sectionBackgroundDecoration]
+                return section
+                
+            case 5:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(80), heightDimension: .estimated(100))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 5)
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .groupPaging
+                section.contentInsets = .init(top: 30, leading: 15, bottom: 0, trailing: 0)
+                
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topTrailing)
+                header.contentInsets = .init(top: 0, leading: 0, bottom: -60, trailing: 0)
+                section.boundarySupplementaryItems = [header]
+
+                return section
+                
+            case 6:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.31), heightDimension: .absolute(200))
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+                group.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 0)
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .groupPaging
+                section.contentInsets = .init(top: 15, leading: 10, bottom: 0, trailing: 10)
+                
+                return section
+                
+            case 7:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.31), heightDimension: .absolute(200))
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+                group.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 0)
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .groupPaging
+                section.contentInsets = .init(top: 15, leading: 10, bottom: 0, trailing: 10)
+                
+                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(65))
+                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
+                section.boundarySupplementaryItems = [footer]
                 
                 return section
                 
@@ -113,12 +156,7 @@ struct Layout {
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .groupPaging
-                section.contentInsets = .init(top: 30, leading: 15, bottom: 50, trailing: 15)
-                
-//                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
-//                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
-//                
-//                section.boundarySupplementaryItems = [header]
+                section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
                 
                 let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
                     elementKind: "background")
