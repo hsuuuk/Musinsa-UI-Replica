@@ -63,6 +63,9 @@ class HomeViewController: UIViewController {
         collectionView.register(recommendCell4.self, forCellWithReuseIdentifier: "recommendCell4")
         collectionView.register(recommendCell4Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "recommendCell4Header")
         collectionView.register(recommendCell4Footer.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "recommendCell4Footer")
+        collectionView.register(ScrollCell1.self, forCellWithReuseIdentifier: "ScrollCell1")
+        collectionView.register(ScrollCell2.self, forCellWithReuseIdentifier: "ScrollCell2")
+        collectionView.register(ScrollHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ScrollHeader")
         
         let barketBarButton = UIBarButtonItem(image: UIImage(systemName: "bag"), style: .plain, target: self, action: #selector(BarButtonTapped))
         barketBarButton.tintColor = .black
@@ -78,6 +81,8 @@ class HomeViewController: UIViewController {
     @objc func BarButtonTapped() {
     }
 }
+
+// MARK: - DataSource
 
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -97,6 +102,8 @@ extension HomeViewController: UICollectionViewDataSource {
             case 5: return 10
             case 6: return 3
             case 7: return 3
+            case 8 : return 7
+            case 9: return 20
             default: return 10
             }
         }
@@ -161,6 +168,28 @@ extension HomeViewController: UICollectionViewDataSource {
             } else if indexPath.section == 7 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
                 return cell
+            } else if indexPath.section == 8 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScrollCell1", for: indexPath) as! ScrollCell1
+                switch indexPath.row {
+                case 0:
+                    cell.lable.text = "아울렛"
+                    cell.lable.backgroundColor = .black
+                    cell.lable.font = UIFont.boldSystemFont(ofSize: 14)
+                    cell.lable.textColor = .white
+                    cell.lable.layer.masksToBounds = true
+                case 1: cell.lable.text = "부티크"
+                case 2: cell.lable.text = "뷰티"
+                default: cell.lable.text = "골프"
+                }
+                return cell
+            } else if indexPath.section == 9 {
+                if indexPath.row % 4 == 0 {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScrollCell2", for: indexPath) as! ScrollCell2
+                    return cell
+                } else {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
+                    return cell
+                }
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UITableViewCell", for: indexPath)
                 cell.backgroundColor = .orange
@@ -168,7 +197,7 @@ extension HomeViewController: UICollectionViewDataSource {
             }
         }
     }
-    
+        
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if collectionView == collectionView, kind == UICollectionView.elementKindSectionHeader, indexPath.section == 3 {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "recommendCell3Header", for: indexPath) as! recommendCell3Header
@@ -182,16 +211,18 @@ extension HomeViewController: UICollectionViewDataSource {
         } else if collectionView == collectionView, kind == UICollectionView.elementKindSectionFooter, indexPath.section == 7 {
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "recommendCell4Footer", for: indexPath) as! recommendCell4Footer
             return footer
+        } else if collectionView == collectionView, kind == UICollectionView.elementKindSectionHeader, indexPath.section == 8 {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ScrollHeader", for: indexPath) as! ScrollHeader
+            return header
         } else {
             return UICollectionReusableView()
         }
     }
 }
 
+// MARK: - FlowLayout
+
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return CGSize(width: view.frame.width, height: 50)
-//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == topCollectionView {

@@ -35,7 +35,7 @@ class recommendCell3: UICollectionViewCell {
     
     let saleLabel: UILabel = {
         let lb = UILabel()
-        lb.text = ""
+        lb.text = "10%"
         lb.font = UIFont.systemFont(ofSize: 12)
         lb.textColor = .red
         lb.textAlignment = .right
@@ -60,7 +60,7 @@ class recommendCell3: UICollectionViewCell {
         
         let stack = UIStackView(arrangedSubviews: [priceLabel, saleLabel])
         stack.axis = .horizontal
-        stack.distribution = .fillEqually
+        stack.distribution = .fillProportionally
 
         contentView.addSubview(stack)
         stack.snp.makeConstraints { make in
@@ -73,11 +73,3 @@ class recommendCell3: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-let imageView: UIImageView = {
-    let iv = UIImageView()
-    iv.contentMode = .scaleAspectFill
-    iv.clipsToBounds = true
-    iv.image = UIImage(named: "HomeCV1Cell4")
-    return iv
-}()

@@ -14,6 +14,7 @@ class recommendFirstCell: UICollectionViewCell {
         iv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
+        iv.image = UIImage(named: "HomeCV1Cell1")
         return iv
     }()
     
