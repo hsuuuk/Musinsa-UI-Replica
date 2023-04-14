@@ -19,10 +19,11 @@ class ScrollHeader: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         addSubview(lable)
         lable.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(5)
+            make.bottom.equalToSuperview().offset(-15)
         }
     }
     

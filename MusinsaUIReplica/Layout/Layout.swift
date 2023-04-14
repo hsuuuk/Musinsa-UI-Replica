@@ -158,11 +158,11 @@ struct Layout {
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
-                section.contentInsets = .init(top: 25, leading: 15, bottom: 0, trailing: 0)
+                section.contentInsets = .init(top: 0, leading: 15, bottom: 0, trailing: 0)
                 
-                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(85))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
-                header.contentInsets = .init(top: 0, leading: 0, bottom: -60, trailing: 0)
+                header.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
                 section.boundarySupplementaryItems = [header]
                 
                 return section

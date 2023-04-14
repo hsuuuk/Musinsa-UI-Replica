@@ -1,18 +1,19 @@
 //
-//  recommendFirstCell.swift
+//  ScrollCell2.swift
 //  MusinsaUIReplica
 //
-//  Created by 심현석 on 2023/04/11.
+//  Created by 심현석 on 2023/04/13.
 //
 
 import UIKit
 
-class recommendFirstCell: UICollectionViewCell {
+class ScrollCell2: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         iv.contentMode = .scaleAspectFill
+        iv.layer.cornerRadius = 15
         iv.clipsToBounds = true
         iv.image = UIImage(named: "HomeCV1Cell1")
         return iv
@@ -30,15 +31,5 @@ class recommendFirstCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configure(index: Int) {
-        switch index {
-        case 0: imageView.image = UIImage(named: "HomeCV1Cell1")
-        case 1: imageView.image = UIImage(named: "HomeCV1Cell2")
-        case 2: imageView.image = UIImage(named: "HomeCV1Cell3")
-        case 3: imageView.image = UIImage(named: "HomeCV1Cell4")
-        case 4: imageView.image = UIImage(named: "HomeCV1Cell5")
-        default: break
-        }
-    }
 }
+

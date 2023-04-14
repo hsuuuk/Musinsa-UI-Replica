@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
     var topCollectionView: UICollectionView!
     var collectionView: UICollectionView!
     
+    var selectedIndexPath = IndexPath(row: 0, section: 8)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,6 +84,26 @@ class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - Delegate
+
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+        if indexPath.section == 8 {
+            collectionView.scrollToItem(at: IndexPath(row: indexPath.row, section: 8), at: .centeredHorizontally, animated: true)
+            collectionView.scrollToItem(at: IndexPath(row: indexPath.row * 4, section: 9), at: .centeredHorizontally, animated: true)
+            
+            let previousCell = collectionView.cellForItem(at: selectedIndexPath) as? ScrollCell1
+            previousCell?.resetLabel()
+            
+            let cell = collectionView.cellForItem(at: indexPath) as! ScrollCell1
+            cell.changeLabel()
+            
+            selectedIndexPath = indexPath
+        }
+    }
+}
+
 // MARK: - DataSource
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -102,8 +124,8 @@ extension HomeViewController: UICollectionViewDataSource {
             case 5: return 10
             case 6: return 3
             case 7: return 3
-            case 8 : return 7
-            case 9: return 20
+            case 8 : return 6
+            case 9: return 24
             default: return 10
             }
         }
@@ -136,53 +158,37 @@ extension HomeViewController: UICollectionViewDataSource {
             }
             return cell
         } else {
-            if indexPath.section == 0 {
-                let FistCell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendFirstCell", for: indexPath) as! recommendFirstCell
-                switch indexPath.row {
-                case 0: FistCell.imageView.image = UIImage(named: "HomeCV1Cell1")
-                case 1: FistCell.imageView.image = UIImage(named: "HomeCV1Cell2")
-                case 2: FistCell.imageView.image = UIImage(named: "HomeCV1Cell3")
-                case 3: FistCell.imageView.image = UIImage(named: "HomeCV1Cell4")
-                case 4: FistCell.imageView.image = UIImage(named: "HomeCV1Cell5")
-                default: break
-                }
-                return FistCell
-            } else if indexPath.section == 1 {
+            switch indexPath.section {
+            case 0:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendFirstCell", for: indexPath) as! recommendFirstCell
+                cell.configure(index: indexPath.row)
+                return cell
+            case 1:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendSecondCell", for: indexPath) as! recommendSecondCell
+                return cell
+            case 2:
                 let SecondCell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendSecondCell", for: indexPath) as! recommendSecondCell
                 return SecondCell
-            } else if indexPath.section == 2 {
-                let SecondCell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendSecondCell", for: indexPath) as! recommendSecondCell
-                return SecondCell
-            } else if indexPath.section == 3 {
+            case 3:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
                 return cell
-            } else if indexPath.section == 4 {
+            case 4:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
                 return cell
-            } else if indexPath.section == 5 {
+            case 5:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell4", for: indexPath) as! recommendCell4
                 return cell
-            } else if indexPath.section == 6 {
+            case 6:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
                 return cell
-            } else if indexPath.section == 7 {
+            case 7:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
                 return cell
-            } else if indexPath.section == 8 {
+            case 8:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScrollCell1", for: indexPath) as! ScrollCell1
-                switch indexPath.row {
-                case 0:
-                    cell.lable.text = "아울렛"
-                    cell.lable.backgroundColor = .black
-                    cell.lable.font = UIFont.boldSystemFont(ofSize: 14)
-                    cell.lable.textColor = .white
-                    cell.lable.layer.masksToBounds = true
-                case 1: cell.lable.text = "부티크"
-                case 2: cell.lable.text = "뷰티"
-                default: cell.lable.text = "골프"
-                }
+                cell.configure(index: indexPath.row)
                 return cell
-            } else if indexPath.section == 9 {
+            case 9:
                 if indexPath.row % 4 == 0 {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScrollCell2", for: indexPath) as! ScrollCell2
                     return cell
@@ -190,7 +196,7 @@ extension HomeViewController: UICollectionViewDataSource {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
                     return cell
                 }
-            } else {
+            default:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UITableViewCell", for: indexPath)
                 cell.backgroundColor = .orange
                 return cell
