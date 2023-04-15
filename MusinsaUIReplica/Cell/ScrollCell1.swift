@@ -36,14 +36,14 @@ class ScrollCell1: UICollectionViewCell {
     func configure(index: Int) {
         switch index {
         case 0:
-            label.text = "아울렛"
+            label.text = "플레이"
             changeLabel()
-        case 1:
-            label.text = "부티크"
-        case 2:
-            label.text = "뷰티"
-        default:
-            label.text = "골프"
+        case 1: label.text = "부티크"
+        case 2: label.text = "뷰티"
+        case 3: label.text = "골프"
+        case 4: label.text = "키즈"
+        case 5: label.text = "어스"
+        default: break
         }
     }
         

@@ -36,6 +36,5 @@ class TopCell: UICollectionViewCell {
     }
     
     @objc func buttonTapped() {
-        print("button is Tapped")
     }
 }

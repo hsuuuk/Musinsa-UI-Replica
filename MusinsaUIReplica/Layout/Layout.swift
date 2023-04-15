@@ -102,7 +102,7 @@ struct Layout {
                 group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 5)
                 
                 let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .groupPaging
+                section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets = .init(top: 30, leading: 15, bottom: 0, trailing: 0)
                 
                 let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
@@ -168,7 +168,7 @@ struct Layout {
                 return section
                 
             default:
-                let topItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(350))
+                let topItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(430))
                 let topItem = NSCollectionLayoutItem(layoutSize: topItemSize)
                 topItem.contentInsets = .init(top: 0, leading: 0, bottom: 15, trailing: 0)
                 

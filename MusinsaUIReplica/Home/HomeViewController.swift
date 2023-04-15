@@ -40,7 +40,6 @@ class HomeViewController: UIViewController {
         topCollectionView.dataSource = self
         topCollectionView.delegate = self
         topCollectionView.register(TopCell.self, forCellWithReuseIdentifier: "TopCell")
-//        topCollectionView.register(TopHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TopHeader")
         
         // MARK: - collectionView
         
@@ -88,7 +87,6 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
         if indexPath.section == 8 {
             collectionView.scrollToItem(at: IndexPath(row: indexPath.row, section: 8), at: .centeredHorizontally, animated: true)
             collectionView.scrollToItem(at: IndexPath(row: indexPath.row * 4, section: 9), at: .centeredHorizontally, animated: true)
@@ -121,7 +119,7 @@ extension HomeViewController: UICollectionViewDataSource {
             case 2: return 5
             case 3: return 3
             case 4: return 3
-            case 5: return 10
+            case 5: return 8
             case 6: return 3
             case 7: return 3
             case 8 : return 6
@@ -165,24 +163,31 @@ extension HomeViewController: UICollectionViewDataSource {
                 return cell
             case 1:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendSecondCell", for: indexPath) as! recommendSecondCell
+                cell.configure1(index: indexPath.row)
                 return cell
             case 2:
-                let SecondCell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendSecondCell", for: indexPath) as! recommendSecondCell
-                return SecondCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendSecondCell", for: indexPath) as! recommendSecondCell
+                cell.configure2(index: indexPath.row)
+                return cell
             case 3:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
+                cell.configure1(index: indexPath.row)
                 return cell
             case 4:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
+                cell.configure2(index: indexPath.row)
                 return cell
             case 5:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell4", for: indexPath) as! recommendCell4
+                cell.configure(index: indexPath.row)
                 return cell
             case 6:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
+                cell.configure3(index: indexPath.row)
                 return cell
             case 7:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
+                cell.configure4(index: indexPath.row)
                 return cell
             case 8:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScrollCell1", for: indexPath) as! ScrollCell1
@@ -191,19 +196,20 @@ extension HomeViewController: UICollectionViewDataSource {
             case 9:
                 if indexPath.row % 4 == 0 {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScrollCell2", for: indexPath) as! ScrollCell2
+                    cell.configure(index: indexPath.row)
                     return cell
                 } else {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3
+                    cell.configure5(index: indexPath.row)
                     return cell
                 }
             default:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UITableViewCell", for: indexPath)
-                cell.backgroundColor = .orange
                 return cell
             }
         }
     }
-        
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if collectionView == collectionView, kind == UICollectionView.elementKindSectionHeader, indexPath.section == 3 {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "recommendCell3Header", for: indexPath) as! recommendCell3Header

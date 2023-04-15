@@ -31,5 +31,17 @@ class ScrollCell2: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configure(index: Int) {
+        switch index {
+        case 0: imageView.image = UIImage(named: "HS10C1")
+        case 4: imageView.image = UIImage(named: "HS10C5")
+        case 8: imageView.image = UIImage(named: "HS10C9")
+        case 12: imageView.image = UIImage(named: "HS10C17")
+        case 16: imageView.image = UIImage(named: "HS10C13")
+        case 20: imageView.image = UIImage(named: "HS10C21")
+        default: break
+        }
+    }
 }
 

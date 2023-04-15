@@ -12,7 +12,7 @@ class recommendCell4Footer: UICollectionReusableView {
     
     lazy var Button: UIButton = {
         let bt = UIButton(type: .system)
-        bt.setAttributedTitle(attributedText(firstText: "돈애스크마이플랜", secondText: " 브랜드 숍 바로가기   ❯"), for: .normal)
+        bt.setAttributedTitle(attributedText(firstText: "유쓰배쓰", secondText: " 브랜드 숍 바로가기   ❯"), for: .normal)
         bt.layer.cornerRadius = 50 / 2
         bt.layer.borderColor = UIColor.lightGray.cgColor
         bt.layer.borderWidth = 0.5

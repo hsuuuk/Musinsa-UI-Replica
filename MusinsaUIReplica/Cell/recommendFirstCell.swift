@@ -33,11 +33,11 @@ class recommendFirstCell: UICollectionViewCell {
     
     func configure(index: Int) {
         switch index {
-        case 0: imageView.image = UIImage(named: "HomeCV1Cell1")
-        case 1: imageView.image = UIImage(named: "HomeCV1Cell2")
-        case 2: imageView.image = UIImage(named: "HomeCV1Cell3")
-        case 3: imageView.image = UIImage(named: "HomeCV1Cell4")
-        case 4: imageView.image = UIImage(named: "HomeCV1Cell5")
+        case 0: imageView.image = UIImage(named: "HS2C1")
+        case 1: imageView.image = UIImage(named: "HS2C2")
+        case 2: imageView.image = UIImage(named: "HS2C3")
+        case 3: imageView.image = UIImage(named: "HS2C4")
+        case 4: imageView.image = UIImage(named: "HS2C5")
         default: break
         }
     }
