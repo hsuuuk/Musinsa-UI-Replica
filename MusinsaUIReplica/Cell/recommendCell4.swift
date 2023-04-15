@@ -68,8 +68,8 @@ class recommendCell4: UICollectionViewCell {
         switch index {
         case 0:
             imageView.image = UIImage(named: "HS7C8")
-            imageView.layer.borderColor = UIColor.black.cgColor
-            imageView.layer.borderWidth = 1
+//            imageView.layer.borderColor = UIColor.black.cgColor
+//            imageView.layer.borderWidth = 1
         case 1: imageView.image = UIImage(named: "HS7C2")
         case 2: imageView.image = UIImage(named: "HS7C3")
         case 3: imageView.image = UIImage(named: "HS7C4")

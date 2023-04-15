@@ -87,7 +87,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 8 {
+        if collectionView == collectionView ,indexPath.section == 8 {
             collectionView.scrollToItem(at: IndexPath(row: indexPath.row, section: 8), at: .centeredHorizontally, animated: true)
             collectionView.scrollToItem(at: IndexPath(row: indexPath.row * 4, section: 9), at: .centeredHorizontally, animated: true)
             
@@ -192,6 +192,14 @@ extension HomeViewController: UICollectionViewDataSource {
             case 8:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScrollCell1", for: indexPath) as! ScrollCell1
                 cell.configure(index: indexPath.row)
+                
+                // 셀의 재사용성 때문에 스크롤하면서 셀이 화면 밖으로 사라지면 그 셀이 다른 인덱스 경로의 셀로 재사용되어 선택된 셀뿐만 아니라 다른 셀의 색상도 변경되는 에러 발생. 여기서도 셀의 상태를 설정해줘서 에러 해결
+                if selectedIndexPath == indexPath {
+                    cell.changeLabel()
+                } else {
+                    cell.resetLabel()
+                }
+                
                 return cell
             case 9:
                 if indexPath.row % 4 == 0 {
