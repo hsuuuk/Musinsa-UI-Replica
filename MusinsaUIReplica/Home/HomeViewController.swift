@@ -180,6 +180,16 @@ extension HomeViewController: UICollectionViewDataSource {
             case 5:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell4", for: indexPath) as! recommendCell4
                 cell.configure(index: indexPath.row)
+                
+                // 재사용성 떄문에 Cell Class말고 여기에 셀 상태 설정
+                if indexPath.row == 0 {
+                    cell.imageView.layer.borderColor = UIColor.black.cgColor
+                    cell.imageView.layer.borderWidth = 1
+                } else {
+                    cell.imageView.layer.borderColor = UIColor.lightGray.cgColor
+                    cell.imageView.layer.borderWidth = 0.5
+                }
+                
                 return cell
             case 6:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell3", for: indexPath) as! recommendCell3

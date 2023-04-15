@@ -14,8 +14,6 @@ class recommendCell4: UICollectionViewCell {
         iv.contentMode = .scaleAspectFill
         iv.layer.cornerRadius = 70 / 2
         iv.clipsToBounds = true
-        iv.layer.borderColor = UIColor.lightGray.cgColor
-        iv.layer.borderWidth = 0.5
         iv.image = UIImage(named: "HomeCV1Cell4")
         return iv
     }()
@@ -66,10 +64,7 @@ class recommendCell4: UICollectionViewCell {
         }
         
         switch index {
-        case 0:
-            imageView.image = UIImage(named: "HS7C8")
-//            imageView.layer.borderColor = UIColor.black.cgColor
-//            imageView.layer.borderWidth = 1
+        case 0: imageView.image = UIImage(named: "HS7C8")
         case 1: imageView.image = UIImage(named: "HS7C2")
         case 2: imageView.image = UIImage(named: "HS7C3")
         case 3: imageView.image = UIImage(named: "HS7C4")
