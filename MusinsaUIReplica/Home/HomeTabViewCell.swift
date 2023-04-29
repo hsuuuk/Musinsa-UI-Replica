@@ -31,7 +31,6 @@ class HomeTabViewCell: UICollectionViewCell {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell_Sale")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell_Event")
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UITableViewCell")
         collectionView.register(RecommendCell1.self, forCellWithReuseIdentifier: "RecommendCell1")
         collectionView.register(RecommendCell2.self, forCellWithReuseIdentifier: "RecommendCell2")
         collectionView.register(RecommendCell3.self, forCellWithReuseIdentifier: "RecommendCell3")
