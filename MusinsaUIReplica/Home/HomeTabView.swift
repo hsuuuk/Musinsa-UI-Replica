@@ -14,7 +14,7 @@ class HomeTabView: UIView {
     let pagingTabBar: HomeTabBar
     
     let PagingViewCellDataArray: [CellData] = [
-        CellData(layout: Layout11.CompositionalLayout(), dataSource: DataSource1(), delegate: Delegate1()),
+        CellData(layout: Layout1(), dataSource: DataSource1(), delegate: Delegate1()),
         CellData(layout: Layout2(), dataSource: DataSource2(), delegate: Delegate2()),
         CellData(layout: Layout3(), dataSource: DataSource3(), delegate: Delegate3()),
         CellData(layout: Layout4(), dataSource: DataSource4(), delegate: Delegate4()),
