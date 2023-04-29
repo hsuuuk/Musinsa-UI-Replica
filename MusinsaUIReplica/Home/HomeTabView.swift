@@ -11,9 +11,9 @@ import SnapKit
 class HomeTabView: UIView {
     
     let categoryList: [String]
-    let pagingTabBar: HomeTabBar
+    let homeTabBar: HomeTabBar
     
-    let PagingViewCellDataArray: [CellData] = [
+    let homeTabViewCellDataArray: [CellData] = [
         CellData(layout: Layout1(), dataSource: DataSource1(), delegate: Delegate1()),
         CellData(layout: Layout2(), dataSource: DataSource2(), delegate: Delegate2()),
         CellData(layout: Layout3(), dataSource: DataSource3(), delegate: Delegate3()),
@@ -37,12 +37,12 @@ class HomeTabView: UIView {
         return collectionView
     }()
     
-    init(categoryList: [String], pagingTabBar: HomeTabBar) {
+    init(categoryList: [String], homeTabBar: HomeTabBar) {
         self.categoryList = categoryList
-        self.pagingTabBar = pagingTabBar
+        self.homeTabBar = homeTabBar
         super.init(frame: .zero)
         setupLayout()
-        pagingTabBar.delegate = self
+        homeTabBar.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -64,7 +64,7 @@ extension HomeTabView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeTabViewCell.identifier, for: indexPath) as! HomeTabViewCell
-        cell.cellData = PagingViewCellDataArray[indexPath.row]
+        cell.cellData = homeTabViewCellDataArray[indexPath.row]
         return cell
     }
 }
@@ -77,7 +77,7 @@ extension HomeTabView: UICollectionViewDelegateFlowLayout {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let indexPath = IndexPath(row: Int(targetContentOffset.pointee.x / UIScreen.main.bounds.width), section: 0)
-        pagingTabBar.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        homeTabBar.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
 }
 
