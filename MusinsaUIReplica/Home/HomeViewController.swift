@@ -87,7 +87,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == collectionView ,indexPath.section == 8 {
+        if collectionView == self.collectionView ,indexPath.section == 8 {
             collectionView.scrollToItem(at: IndexPath(row: indexPath.row, section: 8), at: .centeredHorizontally, animated: true)
             collectionView.scrollToItem(at: IndexPath(row: indexPath.row * 4, section: 9), at: .centeredHorizontally, animated: true)
             

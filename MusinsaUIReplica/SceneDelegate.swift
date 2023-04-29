@@ -17,44 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let tabBarController = UITabBarController()
-
-        let VC1 = UINavigationController(rootViewController: CategoryViewController())
-        VC1.title = "카테고리"
-        VC1.view.backgroundColor = .yellow
-
-        let VC2 = UINavigationController(rootViewController: SnapViewController())
-        VC2.title = "스냅"
-        VC2.view.backgroundColor = .red
-
-        let VC3 = UINavigationController(rootViewController: HomeViewController())
-        VC3.title = "홈"
-        VC3.view.backgroundColor = .white
-
-        let VC4 = UINavigationController(rootViewController: LikeViewController())
-        VC4.title = "좋아요"
-        VC4.view.backgroundColor = .orange
-
-        let VC5 = UINavigationController(rootViewController: MyViewController())
-        VC5.title = "마이"
-        VC5.view.backgroundColor = .gray
-
-        tabBarController.setViewControllers([VC1, VC2, VC3, VC4, VC5], animated: false)
-        
-        guard let items = tabBarController.tabBar.items else { return }
-        items[0].image = UIImage(systemName: "magnifyingglass")
-        items[1].image = UIImage(systemName: "number.square")
-        items[2].image = UIImage(systemName: "house")
-        items[3].image = UIImage(systemName: "heart")
-        items[4].image = UIImage(systemName: "person")
-        
-        tabBarController.tabBar.backgroundColor = .black
-        tabBarController.tabBar.tintColor = .white
-        tabBarController.tabBar.unselectedItemTintColor = .darkGray
-        
-        tabBarController.selectedIndex = 2
-        
-        window?.rootViewController = tabBarController
+        window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
     }
 
