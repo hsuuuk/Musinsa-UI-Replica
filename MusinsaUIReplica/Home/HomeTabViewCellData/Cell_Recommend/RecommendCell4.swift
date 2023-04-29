@@ -7,7 +7,7 @@
 
 import UIKit
 
-class recommendCell4: UICollectionViewCell {
+class RecommendCell4: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let iv = UIImageView()
@@ -15,6 +15,8 @@ class recommendCell4: UICollectionViewCell {
         iv.layer.cornerRadius = 70 / 2
         iv.clipsToBounds = true
         iv.image = UIImage(named: "HomeCV1Cell4")
+        iv.layer.borderWidth = 0.5
+        iv.layer.borderColor = UIColor.lightGray.cgColor
         return iv
     }()
     
@@ -33,7 +35,6 @@ class recommendCell4: UICollectionViewCell {
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
-            //make.left.equalToSuperview()
             make.height.width.equalTo(70)
         }
 
@@ -42,7 +43,6 @@ class recommendCell4: UICollectionViewCell {
             make.top.equalTo(imageView.snp.bottom).offset(7)
             make.centerX.equalToSuperview()
             make.left.right.equalToSuperview()
-            //make.width.equalTo(imageView.snp.width)
         }
     }
     

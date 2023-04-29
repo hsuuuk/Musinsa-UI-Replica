@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class recommendCell4Header: UICollectionReusableView {
+class RecommendCell4Header: UICollectionReusableView {
     
     lazy var lable: UILabel = {
         let lb = UILabel()

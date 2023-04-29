@@ -7,7 +7,7 @@
 
 import UIKit
 
-class recommendCell3: UICollectionViewCell {
+class RecommendCell3: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let iv = UIImageView()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ScrollCell2: UICollectionViewCell {
+class RecommendCell5_2: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let iv = UIImageView()

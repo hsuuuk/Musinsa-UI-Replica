@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ScrollCell1: UICollectionViewCell {
-
+class RecommendCell5_1: UICollectionViewCell {
+    
     let label: UILabel = {
         let lb = UILabel()
         lb.font = UIFont.systemFont(ofSize: 14)
