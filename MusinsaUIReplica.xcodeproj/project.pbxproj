@@ -33,6 +33,11 @@
 		8F43EBC929FD478E00A91CA7 /* RecommendCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43EBB929FD478E00A91CA7 /* RecommendCell1.swift */; };
 		8F43EBCA29FD478E00A91CA7 /* Cell_Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43EBBA29FD478E00A91CA7 /* Cell_Style.swift */; };
 		8F43EBCB29FD478E00A91CA7 /* Cell_Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43EBBB29FD478E00A91CA7 /* Cell_Sale.swift */; };
+		8F43EBCD29FDF42100A91CA7 /* CategorySideTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43EBCC29FDF42100A91CA7 /* CategorySideTabView.swift */; };
+		8F43EBCF29FDF43300A91CA7 /* CategoryTopTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43EBCE29FDF43300A91CA7 /* CategoryTopTabView.swift */; };
+		8F43EBD129FDF44700A91CA7 /* CategoryiTemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43EBD029FDF44700A91CA7 /* CategoryiTemView.swift */; };
+		8F43EBD529FE246800A91CA7 /* CategoryTopTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43EBD429FE246800A91CA7 /* CategoryTopTabViewCell.swift */; };
+		8F43EBD729FE31C900A91CA7 /* CategoryiTemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43EBD629FE31C900A91CA7 /* CategoryiTemViewCell.swift */; };
 		8F5CF13029E6561F00D0DF12 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5CF12F29E6561F00D0DF12 /* extension.swift */; };
 		8F5CF13229E6576B00D0DF12 /* SectionBackgroundDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5CF13129E6576B00D0DF12 /* SectionBackgroundDecorationView.swift */; };
 		8F5F86DF29FCC6D20082602F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F86DE29FCC6D20082602F /* TabBarController.swift */; };
@@ -72,6 +77,11 @@
 		8F43EBB929FD478E00A91CA7 /* RecommendCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCell1.swift; sourceTree = "<group>"; };
 		8F43EBBA29FD478E00A91CA7 /* Cell_Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell_Style.swift; sourceTree = "<group>"; };
 		8F43EBBB29FD478E00A91CA7 /* Cell_Sale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell_Sale.swift; sourceTree = "<group>"; };
+		8F43EBCC29FDF42100A91CA7 /* CategorySideTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySideTabView.swift; sourceTree = "<group>"; };
+		8F43EBCE29FDF43300A91CA7 /* CategoryTopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTopTabView.swift; sourceTree = "<group>"; };
+		8F43EBD029FDF44700A91CA7 /* CategoryiTemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryiTemView.swift; sourceTree = "<group>"; };
+		8F43EBD429FE246800A91CA7 /* CategoryTopTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTopTabViewCell.swift; sourceTree = "<group>"; };
+		8F43EBD629FE31C900A91CA7 /* CategoryiTemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryiTemViewCell.swift; sourceTree = "<group>"; };
 		8F5CF12F29E6561F00D0DF12 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		8F5CF13129E6576B00D0DF12 /* SectionBackgroundDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBackgroundDecorationView.swift; sourceTree = "<group>"; };
 		8F5F86DE29FCC6D20082602F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -204,6 +214,11 @@
 			isa = PBXGroup;
 			children = (
 				8F199A5D29E5199E00054D2B /* CategoryViewController.swift */,
+				8F43EBCE29FDF43300A91CA7 /* CategoryTopTabView.swift */,
+				8F43EBD429FE246800A91CA7 /* CategoryTopTabViewCell.swift */,
+				8F43EBCC29FDF42100A91CA7 /* CategorySideTabView.swift */,
+				8F43EBD029FDF44700A91CA7 /* CategoryiTemView.swift */,
+				8F43EBD629FE31C900A91CA7 /* CategoryiTemViewCell.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -293,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F199A6029E519C900054D2B /* SnapViewController.swift in Sources */,
+				8F43EBD129FDF44700A91CA7 /* CategoryiTemView.swift in Sources */,
 				8F43EBBD29FD478E00A91CA7 /* Cell_Ranking.swift in Sources */,
 				8F5CF13229E6576B00D0DF12 /* SectionBackgroundDecorationView.swift in Sources */,
 				8F5F86E529FCC8890082602F /* HomeTabView.swift in Sources */,
@@ -300,10 +316,13 @@
 				8F5F86E329FCC8820082602F /* HomeTabBarCell.swift in Sources */,
 				8F5F86EA29FCC9C10082602F /* CellData.swift in Sources */,
 				8F199A5E29E5199E00054D2B /* CategoryViewController.swift in Sources */,
+				8F43EBD729FE31C900A91CA7 /* CategoryiTemViewCell.swift in Sources */,
 				8F199A4E29E5126B00054D2B /* HomeViewController.swift in Sources */,
+				8F43EBCD29FDF42100A91CA7 /* CategorySideTabView.swift in Sources */,
 				8F43EBC729FD478E00A91CA7 /* RecommendCell4Footer.swift in Sources */,
 				8F5CF13029E6561F00D0DF12 /* extension.swift in Sources */,
 				8F43EBCB29FD478E00A91CA7 /* Cell_Sale.swift in Sources */,
+				8F43EBCF29FDF43300A91CA7 /* CategoryTopTabView.swift in Sources */,
 				8F43EBBF29FD478E00A91CA7 /* RecommendCell3Footer.swift in Sources */,
 				8F43EBC929FD478E00A91CA7 /* RecommendCell1.swift in Sources */,
 				8F43EBC329FD478E00A91CA7 /* RecommendCell3Header.swift in Sources */,
@@ -317,6 +336,7 @@
 				8F43EBC129FD478E00A91CA7 /* RecommendCell5_1.swift in Sources */,
 				8F43EBC229FD478E00A91CA7 /* RecommendCell4Header.swift in Sources */,
 				8F199A4C29E5126B00054D2B /* SceneDelegate.swift in Sources */,
+				8F43EBD529FE246800A91CA7 /* CategoryTopTabViewCell.swift in Sources */,
 				8F43EBC029FD478E00A91CA7 /* Cell_Recommend.swift in Sources */,
 				8F199A6229E519D100054D2B /* LikeViewController.swift in Sources */,
 				8F43EBC829FD478E00A91CA7 /* RecommendCell3.swift in Sources */,

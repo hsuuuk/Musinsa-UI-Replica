@@ -48,7 +48,7 @@ class HomeTabBarCell: UICollectionViewCell {
         }
         
         underline.snp.makeConstraints { make in
-            make.height.equalTo(3.0)
+            make.height.equalTo(2.0)
             make.top.equalTo(titleLabel.snp.bottom).offset(4.0)
             make.leading.trailing.bottom.equalToSuperview()
         }

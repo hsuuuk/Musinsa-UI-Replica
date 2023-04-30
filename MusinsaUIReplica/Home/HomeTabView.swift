@@ -18,6 +18,9 @@ class HomeTabView: UIView {
         CellData(layout: Layout2(), dataSource: DataSource2(), delegate: Delegate2()),
         CellData(layout: Layout3(), dataSource: DataSource3(), delegate: Delegate3()),
         CellData(layout: Layout4(), dataSource: DataSource4(), delegate: Delegate4()),
+        CellData(layout: Layout5(), dataSource: DataSource5(), delegate: Delegate5()),
+        CellData(layout: Layout5(), dataSource: DataSource5(), delegate: Delegate5()),
+        CellData(layout: Layout5(), dataSource: DataSource5(), delegate: Delegate5()),
         CellData(layout: Layout5(), dataSource: DataSource5(), delegate: Delegate5())
     ]
     

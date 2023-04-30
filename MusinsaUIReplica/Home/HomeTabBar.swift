@@ -21,13 +21,8 @@ class HomeTabBar: UIView {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal // scrollDirection의 기본값은 .vertical
-        layout.minimumLineSpacing = 0
-        
-        let inset: CGFloat = 16.0
-        layout.sectionInset = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-        
-        let width = (UIScreen.main.bounds.width - inset * 2) / 5
-        layout.itemSize = CGSize(width: width, height: cellHeight)
+        layout.minimumInteritemSpacing = 20
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = self
@@ -77,5 +72,9 @@ extension HomeTabBar: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.didTapHomeTabBarCell(scrollTo: indexPath)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: categoryList[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15)]).width, height: cellHeight)
     }
 }

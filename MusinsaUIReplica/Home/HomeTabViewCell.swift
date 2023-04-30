@@ -35,7 +35,7 @@ class HomeTabViewCell: UICollectionViewCell {
         collectionView.register(RecommendCell2.self, forCellWithReuseIdentifier: "RecommendCell2")
         collectionView.register(RecommendCell3.self, forCellWithReuseIdentifier: "RecommendCell3")
         collectionView.register(RecommendCell3Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "RecommendCell3Header")
-        collectionView.register(RecommendCell4Footer.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "recommendCell3Footer")
+        collectionView.register(RecommendCell3Footer.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "RecommendCell3Footer")
         collectionView.register(RecommendCell4.self, forCellWithReuseIdentifier: "RecommendCell4")
         collectionView.register(RecommendCell4Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "RecommendCell4Header")
         collectionView.register(RecommendCell4Footer.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "RecommendCell4Footer")

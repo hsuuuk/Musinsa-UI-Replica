@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    let categoryList = ["추천", "랭킹", "스타일", "세일", "이벤트"]
+    let categoryList = ["추천", "랭킹", "스타일", "세일", "뷰티", "이벤트", "여름", "황금연휴"]
     
     lazy var homeTabBar = HomeTabBar(categoryList: categoryList)
     lazy var homeTabView = HomeTabView(categoryList: categoryList, homeTabBar: homeTabBar)
@@ -32,6 +32,10 @@ class HomeViewController: UIViewController {
         bellBarButton.tintColor = .black
         navigationItem.leftBarButtonItems = [bellBarButton]
         
+        setupLayout()
+    }
+    
+    func setupLayout() {
         [homeTabBar, homeTabView].forEach { view.addSubview($0) }
         
         homeTabBar.snp.makeConstraints { make in
