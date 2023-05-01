@@ -16,17 +16,24 @@ class CategorySideTabView: UIView {
     
     var categoryList = ["상의", "아우터", "바지", "원피스/스커트", "신발", "가방", "패션소품", "언더웨어", "뷰티", "스포츠/레저", "라이프", "키즈"]
     
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CategorySideTabView.identifier)
-        tableView.backgroundColor = .systemBackground
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        //layout.itemSize = CGSize(width: collectionView.frame.width, height: 200)
+        layout.minimumLineSpacing = 0
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(CategorySideTabViewCell.self, forCellWithReuseIdentifier: CategorySideTabViewCell.identifier)
+        collectionView.backgroundColor = .systemBackground
         //tableView.isScrollEnabled = false
-        tableView.bounces = false
-        tableView.showsVerticalScrollIndicator = false
-        tableView.separatorStyle = .none
-        return tableView
+        //collectionView.bounces = false
+        //collectionView.showsVerticalScrollIndicator = false
+        //collectionView.separatorStyle = .none
+    
+        collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: [])
+        
+        return collectionView
     }()
     
     override init(frame: CGRect) {
@@ -39,28 +46,34 @@ class CategorySideTabView: UIView {
     }
         
     func setupLayout() {
-        addSubview(tableView)
+        addSubview(collectionView)
         
-        tableView.snp.makeConstraints { make in
+        collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
 }
 
-extension CategorySideTabView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension CategorySideTabView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categoryList.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CategorySideTabView.identifier, for: indexPath)
-        cell.textLabel?.text = categoryList[indexPath.row]
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategorySideTabViewCell.identifier, for: indexPath) as! CategorySideTabViewCell
+        cell.label.attributedText = cell.attributedText(secondText: categoryList[indexPath.row])
+        
+        if indexPath.item == 0 {
+            cell.label.font = UIFont.systemFont(ofSize: 15, weight: .black)
+            cell.label.textColor = .black
+        }
+        
         return cell
     }
 }
 
-extension CategorySideTabView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+extension CategorySideTabView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 50)
     }
 }

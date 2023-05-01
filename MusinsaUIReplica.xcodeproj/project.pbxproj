@@ -46,6 +46,7 @@
 		8F5F86E529FCC8890082602F /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F86E429FCC8890082602F /* HomeTabView.swift */; };
 		8F5F86E729FCC8940082602F /* HomeTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F86E629FCC8940082602F /* HomeTabViewCell.swift */; };
 		8F5F86EA29FCC9C10082602F /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F86E929FCC9C10082602F /* CellData.swift */; };
+		8FBAB36729FF638D00B68128 /* CategorySideTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBAB36629FF638D00B68128 /* CategorySideTabViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		8F5F86E429FCC8890082602F /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		8F5F86E629FCC8940082602F /* HomeTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewCell.swift; sourceTree = "<group>"; };
 		8F5F86E929FCC9C10082602F /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
+		8FBAB36629FF638D00B68128 /* CategorySideTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySideTabViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 				8F43EBCE29FDF43300A91CA7 /* CategoryTopTabView.swift */,
 				8F43EBD429FE246800A91CA7 /* CategoryTopTabViewCell.swift */,
 				8F43EBCC29FDF42100A91CA7 /* CategorySideTabView.swift */,
+				8FBAB36629FF638D00B68128 /* CategorySideTabViewCell.swift */,
 				8F43EBD029FDF44700A91CA7 /* CategoryiTemView.swift */,
 				8F43EBD629FE31C900A91CA7 /* CategoryiTemViewCell.swift */,
 			);
@@ -340,6 +343,7 @@
 				8F43EBC029FD478E00A91CA7 /* Cell_Recommend.swift in Sources */,
 				8F199A6229E519D100054D2B /* LikeViewController.swift in Sources */,
 				8F43EBC829FD478E00A91CA7 /* RecommendCell3.swift in Sources */,
+				8FBAB36729FF638D00B68128 /* CategorySideTabViewCell.swift in Sources */,
 				8F5F86E129FCC8780082602F /* HomeTabBar.swift in Sources */,
 				8F43EBBE29FD478E00A91CA7 /* RecommendCell5_2.swift in Sources */,
 				8F43EBC529FD478E00A91CA7 /* RecommendCell2.swift in Sources */,
