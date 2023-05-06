@@ -32,7 +32,8 @@ class HomeTabBar: UIView {
         collectionView.backgroundColor = .systemBackground
         collectionView.showsHorizontalScrollIndicator = false
         
-        collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: []) // 처음에 첫 탭에 포커싱
+        // 처음에 첫 탭에 포커싱
+        collectionView.selectItem(at: IndexPath(row: 1, section: 0), animated: true, scrollPosition: [])
         
         return collectionView
     }()

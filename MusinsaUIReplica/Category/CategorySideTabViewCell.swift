@@ -30,10 +30,10 @@ class CategorySideTabViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            label.backgroundColor = isSelected ? .systemGray5 : .white
+            label.backgroundColor = isSelected ? .systemGray6 : .white
             label.font = isSelected
-            ? UIFont.systemFont(ofSize: 15, weight: .black)
-            : UIFont.systemFont(ofSize: 15, weight: .regular)
+            ? UIFont.systemFont(ofSize: 14, weight: .black)
+            : UIFont.systemFont(ofSize: 14, weight: .regular)
             label.textColor = isSelected ? .black : .secondaryLabel
         }
     }

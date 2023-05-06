@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Layout2: UICollectionViewFlowLayout {
+class Layout4: UICollectionViewFlowLayout {
     override init() {
         super.init()
         minimumLineSpacing = 10
@@ -22,7 +22,7 @@ class Layout2: UICollectionViewFlowLayout {
 }
 
 
-class DataSource2: NSObject, UICollectionViewDataSource {
+class DataSource4: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }
@@ -34,7 +34,7 @@ class DataSource2: NSObject, UICollectionViewDataSource {
     }
 }
 
-class Delegate2: NSObject, UICollectionViewDelegateFlowLayout {
+class Delegate4: NSObject, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 200)
     }

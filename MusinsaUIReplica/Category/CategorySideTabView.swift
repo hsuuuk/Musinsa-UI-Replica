@@ -8,13 +8,17 @@
 import UIKit
 import SnapKit
 
-
+protocol SideTabViewCellDelegate: AnyObject {
+    func didSelectCell(scrollTo section: Int)
+}
 
 class CategorySideTabView: UIView {
         
     static let identifier = "CategorySideTabView"
     
     var categoryList = ["상의", "아우터", "바지", "원피스/스커트", "신발", "가방", "패션소품", "언더웨어", "뷰티", "스포츠/레저", "라이프", "키즈"]
+    
+    weak var delegate: SideTabViewCellDelegate?
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -26,10 +30,6 @@ class CategorySideTabView: UIView {
         collectionView.delegate = self
         collectionView.register(CategorySideTabViewCell.self, forCellWithReuseIdentifier: CategorySideTabViewCell.identifier)
         collectionView.backgroundColor = .systemBackground
-        //tableView.isScrollEnabled = false
-        //collectionView.bounces = false
-        //collectionView.showsVerticalScrollIndicator = false
-        //collectionView.separatorStyle = .none
     
         collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: [])
         
@@ -64,7 +64,7 @@ extension CategorySideTabView: UICollectionViewDataSource {
         cell.label.attributedText = cell.attributedText(secondText: categoryList[indexPath.row])
         
         if indexPath.item == 0 {
-            cell.label.font = UIFont.systemFont(ofSize: 15, weight: .black)
+            cell.label.font = UIFont.systemFont(ofSize: 14, weight: .black)
             cell.label.textColor = .black
         }
         
@@ -74,6 +74,10 @@ extension CategorySideTabView: UICollectionViewDataSource {
 
 extension CategorySideTabView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 50)
+        return CGSize(width: collectionView.frame.width, height: 45)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectCell(scrollTo: indexPath.item)
     }
 }

@@ -12,7 +12,7 @@ class CategoryViewController: UIViewController {
     
     let categoryTopTabView = CategoryTopTabView()
     let categorySideTabView = CategorySideTabView()
-    let categoryiTemView = CategoryiTemView()
+    lazy var categoryiTemView = CategoryiTemView(categorySideTabView: categorySideTabView)
     
     let searchController: UISearchController = {
         let search = UISearchController()
@@ -47,13 +47,13 @@ class CategoryViewController: UIViewController {
         categoryTopTabView.snp.makeConstraints({ make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.left.right.equalToSuperview()
-            make.height.equalTo(50)
+            make.height.equalTo(80)
         })
         
         categorySideTabView.snp.makeConstraints { make in
             make.left.bottom.equalToSuperview()
             make.top.equalTo(categoryTopTabView.snp.bottom)
-            make.width.equalTo(150)
+            make.width.equalTo(100)
         }
         
         categoryiTemView.snp.makeConstraints { make in

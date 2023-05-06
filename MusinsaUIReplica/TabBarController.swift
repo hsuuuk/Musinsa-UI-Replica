@@ -16,7 +16,7 @@ class TabBarController: UITabBarController {
         setupBackgroundColor()
         
         ///초기에 선택될 탭바 설정
-        self.selectedIndex = 1
+        self.selectedIndex = 0
     }
     
     func setupController() {

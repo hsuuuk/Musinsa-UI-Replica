@@ -9,10 +9,16 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    let categoryList = ["추천", "랭킹", "스타일", "세일", "뷰티", "이벤트", "여름", "황금연휴"]
+    let categoryList = ["추천", "세일", "스타일", "랭킹", "뷰티", "이벤트", "여름", "황금연휴"]
     
     lazy var homeTabBar = HomeTabBar(categoryList: categoryList)
     lazy var homeTabView = HomeTabView(categoryList: categoryList, homeTabBar: homeTabBar)
+    
+    let borderLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGray5
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +42,20 @@ class HomeViewController: UIViewController {
     }
     
     func setupLayout() {
-        [homeTabBar, homeTabView].forEach { view.addSubview($0) }
+        [homeTabBar, borderLine, homeTabView].forEach { view.addSubview($0) }
         
         homeTabBar.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(homeTabBar.cellHeight)
         }
-        homeTabView.snp.makeConstraints { make in
+        borderLine.snp.makeConstraints { make in
             make.top.equalTo(homeTabBar.snp.bottom)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(0.5)
+        }
+        homeTabView.snp.makeConstraints { make in
+            make.top.equalTo(borderLine.snp.bottom)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }

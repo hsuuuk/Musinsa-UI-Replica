@@ -43,6 +43,14 @@ class HomeTabViewCell: UICollectionViewCell {
         collectionView.register(RecommendCell5_2.self, forCellWithReuseIdentifier: "RecommendCell5_2")
         collectionView.register(RecommendCell5Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "RecommendCell5Header")
         
+        collectionView.register(RecommendCell1.self, forCellWithReuseIdentifier: "RecommendCell1")
+        collectionView.register(RecommendCell2.self, forCellWithReuseIdentifier: "RecommendCell2")
+        collectionView.register(SaleCellItem.self, forCellWithReuseIdentifier: "SaleCellItem")
+        collectionView.register(RecommendCell3Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "RecommendCell3Header")
+        collectionView.register(RecommendCell4.self, forCellWithReuseIdentifier: "RecommendCell4")
+        collectionView.register(RecommendCell4Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "RecommendCell4Header")
+        collectionView.register(RecommendCell4Footer.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "RecommendCell4Footer")
+        
         collectionView.showsVerticalScrollIndicator = false
         
         return collectionView

@@ -16,16 +16,16 @@ class CategoryiTemViewCell: UICollectionViewCell {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
+        iv.layer.cornerRadius = 20
         iv.backgroundColor = .gray
         return iv
     }()
     
     var label: UILabel = {
         let lb = UILabel()
-        lb.font = .systemFont(ofSize: 15.0, weight: .semibold)
-        lb.textColor = .secondaryLabel
+        lb.font = .systemFont(ofSize: 14)
+        lb.textColor = .black
         lb.textAlignment = .center
-        lb.backgroundColor = .systemMint
         return lb
     }()
     
@@ -42,8 +42,9 @@ class CategoryiTemViewCell: UICollectionViewCell {
         [imageView, label].forEach { addSubview($0) }
         
         imageView.snp.makeConstraints { make in
-            make.leading.top.trailing.equalToSuperview()
-            make.height.equalTo(20)
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview()
+            make.width.height.equalTo(70)
         }
         
         label.snp.makeConstraints { make in

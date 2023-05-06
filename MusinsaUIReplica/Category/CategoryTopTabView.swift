@@ -11,14 +11,14 @@ import SnapKit
 class CategoryTopTabView: UIView {
     
     var categoryList = ["럭셔리", "키즈", "뷰티", "아울렛", "어스", "스포츠", "골프"]
-    var cellHeight: CGFloat = 44.0
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal // scrollDirection의 기본값은 .vertical
-        layout.itemSize = CGSize(width: 50, height: cellHeight)
-        layout.minimumInteritemSpacing = 20
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        layout.itemSize = CGSize(width: 50, height: 80)
+        layout.minimumInteritemSpacing = 110
+        layout.minimumInteritemSpacing = 110
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 15 , bottom: 0, right: 15)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.dataSource = self
