@@ -16,7 +16,7 @@ class CategorySideTabView: UIView {
         
     static let identifier = "CategorySideTabView"
     
-    var categoryList = ["상의", "아우터", "바지", "원피스/스커트", "신발", "가방", "패션소품", "언더웨어", "뷰티", "스포츠/레저", "라이프", "키즈"]
+    var categoryList = ["상의", "아우터", "바지", "신발", "원피스/스커트", "가방", "패션소품", "언더웨어", "뷰티", "스포츠/레저", "라이프", "키즈"]
     
     weak var delegate: SideTabViewCellDelegate?
     

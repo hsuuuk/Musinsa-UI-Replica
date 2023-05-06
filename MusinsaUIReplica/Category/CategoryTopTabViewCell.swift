@@ -38,6 +38,18 @@ class CategoryTopTabViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupImage(index: Int) {
+        switch index {
+        case 0: imageView.image = UIImage(named: "CategoryTopTabView1")
+        case 1: imageView.image = UIImage(named: "CategoryTopTabView2")
+        case 2: imageView.image = UIImage(named: "CategoryTopTabView3")
+        case 3: imageView.image = UIImage(named: "CategoryTopTabView4")
+        case 4: imageView.image = UIImage(named: "CategoryTopTabView5")
+        case 5: imageView.image = UIImage(named: "CategoryTopTabView6")
+        default: imageView.image = UIImage(named: "CategoryTopTabView7")
+        }
+    }
+    
     func setupLayout() {
         [imageView, label].forEach { addSubview($0) }
         

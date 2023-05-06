@@ -55,6 +55,7 @@ extension CategoryTopTabView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryTopTabViewCell.identifier, for: indexPath) as! CategoryTopTabViewCell
         cell.label.text = categoryList[indexPath.row]
+        cell.setupImage(index: indexPath.row)
         return cell
     }
 }

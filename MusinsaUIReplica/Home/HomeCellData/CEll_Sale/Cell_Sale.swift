@@ -30,13 +30,13 @@ class Layout2: UICollectionViewCompositionalLayout {
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = .init(top: 0, leading: 15, bottom: 0, trailing: 15)
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(320))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .groupPagingCentered
-                section.contentInsets = .init(top: 50, leading: 0, bottom: 0, trailing: 0)
+                section.contentInsets = .init(top: 20, leading: 0, bottom: 10, trailing: 0)
                 
                 return section
                 
@@ -51,7 +51,11 @@ class Layout2: UICollectionViewCompositionalLayout {
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .groupPaging
-                section.contentInsets = .init(top: 50, leading: 15, bottom: 0, trailing: 0)
+                section.contentInsets = .init(top: 0, leading: 15, bottom: 40, trailing: 0)
+                
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topTrailing)
+                section.boundarySupplementaryItems = [header]
                 
                 return section
                 
@@ -66,7 +70,15 @@ class Layout2: UICollectionViewCompositionalLayout {
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .groupPaging
-                section.contentInsets = .init(top: 50, leading: 10, bottom: 300, trailing: 10)
+                section.contentInsets = .init(top: 0, leading: 10, bottom: 200, trailing: 10)
+                
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topTrailing)
+                
+                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(65))
+                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
+                
+                section.boundarySupplementaryItems = [header, footer]
                 
                 return section
             }
@@ -87,7 +99,7 @@ class DataSource2: NSObject, UICollectionViewDataSource {
         switch section {
         case 0: return 2
         case 1: return 5
-        case 2: return 10
+        case 2: return 7
         default: return 6
         }
     }
@@ -95,22 +107,22 @@ class DataSource2: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecommendCell1", for: indexPath) as! RecommendCell1
-            cell.backgroundColor = .systemOrange
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SaleCell1", for: indexPath) as! SaleCell1
+            cell.setupImage1(index: indexPath.row)
             return cell
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecommendCell2", for: indexPath) as! RecommendCell2
-            cell.backgroundColor = .systemOrange
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SaleCell1", for: indexPath) as! SaleCell1
+            cell.setupImage2(index: indexPath.row)
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SaleCellItem", for: indexPath) as! SaleCellItem
-            cell.configure1(index: indexPath.row)
-            cell.backgroundColor = .systemOrange
+            cell.setupImage1(index: indexPath.row)
+            //cell.backgroundColor = .systemOrange
             return cell
         case 3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SaleCellItem", for: indexPath) as! SaleCellItem
-            cell.configure2(index: indexPath.row)
-            cell.backgroundColor = .systemOrange
+            cell.setupImage2(index: indexPath.row)
+            //cell.backgroundColor = .systemOrange
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UITableViewCell", for: indexPath)
@@ -121,10 +133,12 @@ class DataSource2: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch (kind, indexPath.section) {
         case (UICollectionView.elementKindSectionHeader, 2):
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "RecommendCell3Header", for: indexPath) as! RecommendCell3Header
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SaleCellItemHeaer", for: indexPath) as! SaleCellItemHeaer
+            header.setupText(text: "Time Sale")
             return header
         case (UICollectionView.elementKindSectionHeader, 3):
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "RecommendCell4Header", for: indexPath) as! RecommendCell4Header
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SaleCellItemHeaer", for: indexPath) as! SaleCellItemHeaer
+            header.setupText(text: "클리어런스")
             return header
         case (UICollectionView.elementKindSectionFooter, 3):
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "RecommendCell3Footer", for: indexPath) as! RecommendCell3Footer

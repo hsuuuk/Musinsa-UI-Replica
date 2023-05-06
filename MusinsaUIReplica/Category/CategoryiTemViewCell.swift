@@ -38,6 +38,50 @@ class CategoryiTemViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupImage(section: Int, row: Int) {
+        switch section {
+        case 0:
+            switch row {
+            case 0: imageView.image = UIImage(named: "CategoryiTemView1")
+            case 1: imageView.image = UIImage(named: "CategoryiTemView2")
+            case 2: imageView.image = UIImage(named: "CategoryiTemView3")
+            case 3: imageView.image = UIImage(named: "CategoryiTemView4")
+            case 4: imageView.image = UIImage(named: "CategoryiTemView5")
+            default: imageView.image = UIImage(named: "CategoryiTemView6")
+            }
+            
+        case 1:
+            switch row {
+            case 0: imageView.image = UIImage(named: "CategoryiTemView7")
+            case 1: imageView.image = UIImage(named: "CategoryiTemView8")
+            case 2: imageView.image = UIImage(named: "CategoryiTemView9")
+            case 3: imageView.image = UIImage(named: "CategoryiTemView10")
+            case 4: imageView.image = UIImage(named: "CategoryiTemView11")
+            default: imageView.image = UIImage(named: "CategoryiTemView12")
+            }
+            
+        case 2:
+            switch row {
+            case 0: imageView.image = UIImage(named: "CategoryiTemView13")
+            case 1: imageView.image = UIImage(named: "CategoryiTemView14")
+            case 2: imageView.image = UIImage(named: "CategoryiTemView15")
+            case 3: imageView.image = UIImage(named: "CategoryiTemView16")
+            case 4: imageView.image = UIImage(named: "CategoryiTemView17")
+            default: imageView.image = UIImage(named: "CategoryiTemView18")
+            }
+            
+        default:
+            switch row {
+            case 0: imageView.image = UIImage(named: "CategoryiTemView1")
+            case 1: imageView.image = UIImage(named: "CategoryiTemView2")
+            case 2: imageView.image = UIImage(named: "CategoryiTemView3")
+            case 3: imageView.image = UIImage(named: "CategoryiTemView4")
+            case 4: imageView.image = UIImage(named: "CategoryiTemView5")
+            default: imageView.image = UIImage(named: "CategoryiTemView6")
+            }
+        }
+    }
+    
     func setupLayout() {
         [imageView, label].forEach { addSubview($0) }
         

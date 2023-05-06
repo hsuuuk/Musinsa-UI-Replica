@@ -78,6 +78,7 @@ extension CategoryiTemView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryiTemViewCell.identifier, for: indexPath) as! CategoryiTemViewCell
         cell.label.text = itemList[indexPath.section][indexPath.row]
+        cell.setupImage(section: indexPath.section, row: indexPath.row)
         return cell
     }
     

@@ -49,6 +49,8 @@
 		8FBAB36729FF638D00B68128 /* CategorySideTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBAB36629FF638D00B68128 /* CategorySideTabViewCell.swift */; };
 		8FBAB36929FF72F700B68128 /* CategoryiTemViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBAB36829FF72F700B68128 /* CategoryiTemViewHeader.swift */; };
 		8FBAB36C29FFA5CA00B68128 /* SaleCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBAB36B29FFA5CA00B68128 /* SaleCellItem.swift */; };
+		8FBAB36E2A05FC9000B68128 /* SaleCEll1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBAB36D2A05FC9000B68128 /* SaleCEll1.swift */; };
+		8FBAB3702A06037800B68128 /* SaleCellItemHeaer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBAB36F2A06037800B68128 /* SaleCellItemHeaer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		8FBAB36629FF638D00B68128 /* CategorySideTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySideTabViewCell.swift; sourceTree = "<group>"; };
 		8FBAB36829FF72F700B68128 /* CategoryiTemViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryiTemViewHeader.swift; sourceTree = "<group>"; };
 		8FBAB36B29FFA5CA00B68128 /* SaleCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleCellItem.swift; sourceTree = "<group>"; };
+		8FBAB36D2A05FC9000B68128 /* SaleCEll1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleCEll1.swift; sourceTree = "<group>"; };
+		8FBAB36F2A06037800B68128 /* SaleCellItemHeaer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleCellItemHeaer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +247,9 @@
 			isa = PBXGroup;
 			children = (
 				8F43EBBB29FD478E00A91CA7 /* Cell_Sale.swift */,
+				8FBAB36D2A05FC9000B68128 /* SaleCEll1.swift */,
 				8FBAB36B29FFA5CA00B68128 /* SaleCellItem.swift */,
+				8FBAB36F2A06037800B68128 /* SaleCellItemHeaer.swift */,
 			);
 			path = CEll_Sale;
 			sourceTree = "<group>";
@@ -349,8 +355,10 @@
 				8F43EBC429FD478E00A91CA7 /* RecommendCell4.swift in Sources */,
 				8F199A6429E51A8100054D2B /* MyViewController.swift in Sources */,
 				8F199A4A29E5126B00054D2B /* AppDelegate.swift in Sources */,
+				8FBAB3702A06037800B68128 /* SaleCellItemHeaer.swift in Sources */,
 				8F43EBBC29FD478E00A91CA7 /* Cell_Event.swift in Sources */,
 				8F43EBC629FD478E00A91CA7 /* RecommendCell5Header.swift in Sources */,
+				8FBAB36E2A05FC9000B68128 /* SaleCEll1.swift in Sources */,
 				8F43EBC129FD478E00A91CA7 /* RecommendCell5_1.swift in Sources */,
 				8F43EBC229FD478E00A91CA7 /* RecommendCell4Header.swift in Sources */,
 				8F199A4C29E5126B00054D2B /* SceneDelegate.swift in Sources */,
